@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/AckPacket.h
+
+../include/Checksum.h
+DataPacket.h
+../include/DataPacket.h
+cstdint
+-
+
+../include/DataPacket.h
+
+../include/Serializer.h
+AckPacket.h
+../include/AckPacket.h
+
+/home/ahmed/code/c/UdpSocketLib/src/AckPacket.cpp
+AckPacket.h
+/home/ahmed/code/c/UdpSocketLib/src/AckPacket.h
+
+/home/ahmed/code/c/UdpSocketLib/src/Checksum.cpp
+Checksum.h
+/home/ahmed/code/c/UdpSocketLib/src/Checksum.h
+
+/home/ahmed/code/c/UdpSocketLib/src/DataPacket.cpp
+DataPacket.h
+/home/ahmed/code/c/UdpSocketLib/src/DataPacket.h
+Checksum.h
+/home/ahmed/code/c/UdpSocketLib/src/Checksum.h
+
+/home/ahmed/code/c/UdpSocketLib/src/Serializer.cpp
+DataPacket.h
+-
+Serializer.h
+/home/ahmed/code/c/UdpSocketLib/src/Serializer.h
+
