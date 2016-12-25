@@ -8,7 +8,7 @@
 
 #include "AckPacket.h"
 
-class Serializer
+class BinarySerializer
 {
 public:
     /**
@@ -16,14 +16,14 @@ public:
      * @param data_pack Input data packet
      * @param ptr Pointer to the output raw binary data
      */
-    static void SerializeDataPacket(DataPacket data_pack, void *ptr);
+    static void SerializeDataPacket(DataPacket *data_pack, void **ptr);
 
     /**
      * Takes an ACK packet and converts it to raw binary data
      * @param ack_pack Input ACK packet
      * @param ptr Pointer to the output raw binary data
      */
-    static void SerializeAckPacket(AckPacket ack_pack, void *ptr);
+    static void SerializeAckPacket(AckPacket ack_pack, void **ptr);
 
     /**
      * Takes an array of raw binary data and returns its equivalent Data Packet

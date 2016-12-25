@@ -8,16 +8,15 @@
 
 class AckPacket
 {
-    AckPacket();
-
 public:
-    unsigned short cksum;
+    unsigned ack_num;
+    unsigned short chksum;
     unsigned short len;
-    unsigned ackno;
 
-    static AckPacket Create(unsigned int ackno);
+    AckPacket()
+    {}
 
-
+    AckPacket(unsigned int acknum);
 };
 
 

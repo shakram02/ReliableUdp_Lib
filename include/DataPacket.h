@@ -8,17 +8,31 @@
 
 class DataPacket
 {
-    DataPacket();
 
 public:
-    /* Header */
-    unsigned short cksum;
+
+    DataPacket();
+    DataPacket(void *data, unsigned short data_len, unsigned int seq_no);
+
+    /**
+     * Checksum for all the other fields in the packet
+     */
+    unsigned short chksum;
+    /**
+     * Length of data inside the data field
+     * Header + data
+     */
     unsigned short len;
+    /**
+     * Sequence number of the packet
+     */
     unsigned int seqno;
 
-    /* Data */
-    char data[248] = {0}; // Struct total size is 256 bytes
-    static DataPacket Create(void *data, unsigned int data_length, unsigned int seq_no);
+    /**
+     * The size data in the packet isn't dynamic
+     * but will rather be known using the len field
+     */
+    char data[128] = {0};
 };
 
 

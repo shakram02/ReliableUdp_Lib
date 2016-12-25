@@ -86,10 +86,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ahmed/code/c/UdpSocketLib/include/Serializer.h">
+		<Unit filename="/home/ahmed/code/c/UdpSocketLib/include/BinarySerializer.h">
+			<Option target="UdpSocketLib"/>
+		</Unit>
+		<Unit filename="/home/ahmed/code/c/UdpSocketLib/include/PacketStore.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
 		<Unit filename="/home/ahmed/code/c/UdpSocketLib/src/AckPacket.cpp">
+			<Option target="UdpSocketLib"/>
+		</Unit>
+		<Unit filename="/home/ahmed/code/c/UdpSocketLib/src/BinarySerializer.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
 		<Unit filename="/home/ahmed/code/c/UdpSocketLib/src/Checksum.cpp">
@@ -98,7 +104,7 @@
 		<Unit filename="/home/ahmed/code/c/UdpSocketLib/src/DataPacket.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
-		<Unit filename="/home/ahmed/code/c/UdpSocketLib/src/Serializer.cpp">
+		<Unit filename="/home/ahmed/code/c/UdpSocketLib/src/PacketStore.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
 		<Unit filename="/home/ahmed/code/c/UdpSocketLib/src/netutils.c">

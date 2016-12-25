@@ -4,12 +4,10 @@
 
 #include "AckPacket.h"
 
-AckPacket::AckPacket()
-{
 
-}
-
-AckPacket AckPacket::Create(unsigned int ackno)
+AckPacket::AckPacket(unsigned int acknum)
 {
-    return AckPacket();
+    this->ack_num = acknum;
+    this->chksum = 3;
+    this->len = sizeof(acknum) + sizeof(chksum);
 }

@@ -15,9 +15,10 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ahmed/code/c/UdpSocketLib/src/AckPacket.cpp" "/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o"
+  "/home/ahmed/code/c/UdpSocketLib/src/BinarySerializer.cpp" "/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o"
   "/home/ahmed/code/c/UdpSocketLib/src/Checksum.cpp" "/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o"
   "/home/ahmed/code/c/UdpSocketLib/src/DataPacket.cpp" "/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/DataPacket.cpp.o"
-  "/home/ahmed/code/c/UdpSocketLib/src/Serializer.cpp" "/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/Serializer.cpp.o"
+  "/home/ahmed/code/c/UdpSocketLib/src/PacketStore.cpp" "/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/PacketStore.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

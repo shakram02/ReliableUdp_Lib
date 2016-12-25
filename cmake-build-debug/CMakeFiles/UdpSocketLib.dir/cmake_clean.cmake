@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o"
+  "CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o"
   "CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o"
   "CMakeFiles/UdpSocketLib.dir/src/DataPacket.cpp.o"
-  "CMakeFiles/UdpSocketLib.dir/src/Serializer.cpp.o"
+  "CMakeFiles/UdpSocketLib.dir/src/PacketStore.cpp.o"
   "CMakeFiles/UdpSocketLib.dir/src/netutils.c.o"
   "libUdpSocketLib.pdb"
   "libUdpSocketLib.so"
