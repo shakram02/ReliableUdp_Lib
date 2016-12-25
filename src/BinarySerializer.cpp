@@ -3,7 +3,6 @@
 //
 
 #include <DataPacket.h>
-#include <iostream>
 #include "BinarySerializer.h"
 
 void BinarySerializer::SerializeDataPacket(DataPacket *data_pack, void **projected_data_ptr)
@@ -22,8 +21,7 @@ void BinarySerializer::SerializeAckPacket(AckPacket *ack_pack, void **projected_
     (*projected_ack_ptr) = reinterpret_cast<void *>(ack_pack);
 }
 
-void BinarySerializer::DeserializeAckPacket(void *packetBytes,
-        AckPacket **recovered)
+void BinarySerializer::DeserializeAckPacket(void *packetBytes, AckPacket **recovered)
 {
     (*recovered) = reinterpret_cast<AckPacket *>(packetBytes);
 }

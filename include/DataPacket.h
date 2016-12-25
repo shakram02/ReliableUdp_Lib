@@ -5,6 +5,7 @@
 #ifndef ENHANCEDUDPCLIENT_DATAPACKET_H
 #define ENHANCEDUDPCLIENT_DATAPACKET_H
 
+#include "globaldefs.h"
 
 class DataPacket
 {
@@ -12,6 +13,14 @@ class DataPacket
 public:
 
     DataPacket();
+
+    /**
+     * Creates a data packet by copying the data supplied in *data to the
+     * local data field of the packet using the given length
+     * @param data Data to be copied to the packet
+     * @param data_len Length of data
+     * @param seq_no Sequence number of the packet
+     */
     DataPacket(void *data, unsigned short data_len, unsigned int seq_no);
 
     /**
@@ -28,11 +37,12 @@ public:
      */
     unsigned int seqno;
 
+
     /**
      * The size data in the packet isn't dynamic
      * but will rather be known using the len field
      */
-    char data[128] = {0};
+    char data[DATA_FRAGMENT_SIZE] = {0};
 };
 
 

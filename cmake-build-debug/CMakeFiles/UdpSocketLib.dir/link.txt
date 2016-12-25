@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -g  -shared -Wl,-soname,libUdpSocketLib.so -o libUdpSocketLib.so CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o CMakeFiles/UdpSocketLib.dir/src/DataPacket.cpp.o CMakeFiles/UdpSocketLib.dir/src/PacketStore.cpp.o CMakeFiles/UdpSocketLib.dir/src/netutils.c.o 

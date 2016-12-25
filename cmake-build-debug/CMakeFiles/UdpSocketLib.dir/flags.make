@@ -7,11 +7,11 @@ C_FLAGS = -g -fPIC
 
 C_DEFINES = -DUdpSocketLib_EXPORTS
 
-C_INCLUDES = -I/home/ahmed/code/c/UdpSocketLib/include 
+C_INCLUDES = -I/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/include 
 
 CXX_FLAGS = -g -fPIC   -std=gnu++11
 
 CXX_DEFINES = -DUdpSocketLib_EXPORTS
 
-CXX_INCLUDES = -I/home/ahmed/code/c/UdpSocketLib/include 
+CXX_INCLUDES = -I/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/include 
 

@@ -8,43 +8,43 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/ahmed/code/c/UdpSocketLib/cmake-build-debug"/>
+				<Option working_dir="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/ahmed/code/c/UdpSocketLib/cmake-build-debug"/>
+				<Option working_dir="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/ahmed/code/c/UdpSocketLib/cmake-build-debug"/>
+				<Option working_dir="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="UdpSocketLib">
-				<Option output="/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/libUdpSocketLib.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ahmed/code/c/UdpSocketLib/cmake-build-debug"/>
+				<Option output="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/libUdpSocketLib.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="3"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ahmed/code/c/UdpSocketLib/include"/>
+					<Add directory="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -55,20 +55,20 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 UdpSocketLib"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 UdpSocketLib"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="UdpSocketLib/fast">
-				<Option output="/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/libUdpSocketLib.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ahmed/code/c/UdpSocketLib/cmake-build-debug"/>
+				<Option output="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/libUdpSocketLib.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="3"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ahmed/code/c/UdpSocketLib/include"/>
+					<Add directory="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
@@ -79,38 +79,41 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 UdpSocketLib/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 UdpSocketLib/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ahmed/code/c/UdpSocketLib/include/BinarySerializer.h">
+		<Unit filename="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/include/BinarySerializer.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
-		<Unit filename="/home/ahmed/code/c/UdpSocketLib/include/PacketStore.h">
+		<Unit filename="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/include/PacketStore.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
-		<Unit filename="/home/ahmed/code/c/UdpSocketLib/src/AckPacket.cpp">
+		<Unit filename="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/include/globaldefs.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
-		<Unit filename="/home/ahmed/code/c/UdpSocketLib/src/BinarySerializer.cpp">
+		<Unit filename="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/src/AckPacket.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
-		<Unit filename="/home/ahmed/code/c/UdpSocketLib/src/Checksum.cpp">
+		<Unit filename="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/src/BinarySerializer.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
-		<Unit filename="/home/ahmed/code/c/UdpSocketLib/src/DataPacket.cpp">
+		<Unit filename="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/src/Checksum.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
-		<Unit filename="/home/ahmed/code/c/UdpSocketLib/src/PacketStore.cpp">
+		<Unit filename="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/src/DataPacket.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
-		<Unit filename="/home/ahmed/code/c/UdpSocketLib/src/netutils.c">
+		<Unit filename="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/src/PacketStore.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
-		<Unit filename="/home/ahmed/code/c/UdpSocketLib/CMakeLists.txt">
+		<Unit filename="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/src/netutils.c">
+			<Option target="UdpSocketLib"/>
+		</Unit>
+		<Unit filename="/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

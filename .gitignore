@@ -105,7 +105,6 @@ Mkfile.old
 dkms.conf
 
 # Data Files
-*.txt
-*.jpg
+cmake-build-debug/*.jpg
 *.mp3
 *.zip

@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/ahmed/code/c/UdpSocketLib/src/netutils.c" "/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/netutils.c.o"
+  "/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/src/netutils.c" "/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/netutils.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -14,11 +14,11 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../include"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ahmed/code/c/UdpSocketLib/src/AckPacket.cpp" "/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o"
-  "/home/ahmed/code/c/UdpSocketLib/src/BinarySerializer.cpp" "/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o"
-  "/home/ahmed/code/c/UdpSocketLib/src/Checksum.cpp" "/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o"
-  "/home/ahmed/code/c/UdpSocketLib/src/DataPacket.cpp" "/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/DataPacket.cpp.o"
-  "/home/ahmed/code/c/UdpSocketLib/src/PacketStore.cpp" "/home/ahmed/code/c/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/PacketStore.cpp.o"
+  "/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/src/AckPacket.cpp" "/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o"
+  "/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/src/BinarySerializer.cpp" "/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o"
+  "/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/src/Checksum.cpp" "/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o"
+  "/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/src/DataPacket.cpp" "/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/DataPacket.cpp.o"
+  "/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/src/PacketStore.cpp" "/home/ahmed/code/c/Backup-UDP/restore0/UdpSocketLib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/PacketStore.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
