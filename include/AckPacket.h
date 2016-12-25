@@ -9,7 +9,7 @@
 class AckPacket
 {
 public:
-    unsigned ack_num;
+    unsigned int ack_num;
     unsigned short chksum;
     unsigned short len;
 

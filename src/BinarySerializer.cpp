@@ -3,28 +3,32 @@
 //
 
 #include <DataPacket.h>
+#include <iostream>
 #include "BinarySerializer.h"
 
 void BinarySerializer::SerializeDataPacket(DataPacket *data_pack, void **ptr)
 {
-
     (*ptr) = reinterpret_cast<void *>(data_pack);
 }
 
-DataPacket BinarySerializer::DeserializeDataPacket(void *packetBytes, unsigned int packet_len)
+void BinarySerializer::DeserializeDataPacket(void *packetBytes, unsigned int packet_len,
+        DataPacket **recovered)
 {
-    DataPacket *pRec = reinterpret_cast<DataPacket *>(packetBytes);
-    //cout << "Unpacked:" << pRec->data << endl;
-    return (*pRec);
+    (*recovered) = reinterpret_cast<DataPacket *>(packetBytes);
+    //std::cout << "Unpacked:" << (*recovered)->data << std::endl;
 }
 
-void BinarySerializer::SerializeAckPacket(AckPacket data_pack, void **ptr)
+void BinarySerializer::SerializeAckPacket(AckPacket *ack_pack, void **ptr)
 {
-
+    (*ptr) = reinterpret_cast<void *>(ack_pack);
 }
 
-AckPacket BinarySerializer::DeserializeAckPacket(void *packetBytes)
+void BinarySerializer::DeserializeAckPacket(void *packetBytes,
+        AckPacket **recovered)
 {
-    return AckPacket();
+    (*recovered) = reinterpret_cast<AckPacket *>(packetBytes);
+//    std::cout << "Deserializer Len:" << (*recovered)->len << std::endl;
+//    std::cout << "Deserializer Checksum:" << (*recovered)->chksum << std::endl;
+//    std::cout << "Deserializer ACK NUM:" << (*recovered)->ack_num << std::endl;
 }
 

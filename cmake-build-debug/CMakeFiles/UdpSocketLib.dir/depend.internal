@@ -6,6 +6,8 @@ CMakeFiles/UdpSocketLib.dir/src/netutils.c.o
  /home/ahmed/code/c/UdpSocketLib/src/netutils.c
 CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o
  ../include/AckPacket.h
+ ../include/Checksum.h
+ ../include/DataPacket.h
  /home/ahmed/code/c/UdpSocketLib/src/AckPacket.cpp
 CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o
  ../include/AckPacket.h
