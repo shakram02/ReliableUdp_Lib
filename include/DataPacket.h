@@ -15,6 +15,13 @@ public:
     DataPacket();
 
     /**
+     * Create a deep copy of the provided data packet
+     * into the current instance, a pointer is used only to improve efficiency
+     * @param source Source DataPacket location
+     */
+    void Clone(DataPacket *source);
+
+    /**
      * Creates a data packet by copying the data supplied in *data to the
      * local data field of the packet using the given length
      * @param data Data to be copied to the packet
@@ -36,7 +43,6 @@ public:
      * Sequence number of the packet
      */
     unsigned int seqno;
-
 
     /**
      * The size data in the packet isn't dynamic

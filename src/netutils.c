@@ -87,4 +87,3 @@ void get_socket_info(struct sockaddr info, char *info_str_arr[])
     int port = get_port_num(&info);
     sprintf(info_str_arr[1], "%d", port);
 }
-

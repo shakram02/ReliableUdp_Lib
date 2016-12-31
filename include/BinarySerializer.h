@@ -37,8 +37,7 @@ public:
      * @param packet_len Length of the binary data array
      * @return A reconstructed DataPacket from the provided binary data
      */
-    static void DeserializeDataPacket(void *packetBytes,
-            unsigned int packet_len, DataPacket **recovered);
+    static void DeserializeDataPacket(void *packetBytes, DataPacket **recovered);
 
     /**
      * Takes an array of raw binary data and returns its equivalent ACK Packet

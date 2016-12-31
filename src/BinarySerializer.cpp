@@ -10,7 +10,7 @@ void BinarySerializer::SerializeDataPacket(DataPacket *data_pack, void **project
     (*projected_data_ptr) = reinterpret_cast<void *>(data_pack);
 }
 
-void BinarySerializer::DeserializeDataPacket(void *packetBytes, unsigned int packet_len,
+void BinarySerializer::DeserializeDataPacket(void *packetBytes,
         DataPacket **recovered)
 {
     (*recovered) = reinterpret_cast<DataPacket *>(packetBytes);
@@ -25,4 +25,3 @@ void BinarySerializer::DeserializeAckPacket(void *packetBytes, AckPacket **recov
 {
     (*recovered) = reinterpret_cast<AckPacket *>(packetBytes);
 }
-

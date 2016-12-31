@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <cstring>
 #include "DataPacket.h"
 
 DataPacket::DataPacket()
@@ -25,3 +26,11 @@ DataPacket::DataPacket(void *data, unsigned short data_len, unsigned int seq_no)
     }
 }
 
+void DataPacket::Clone(DataPacket *source)
+{
+    this->chksum = source->chksum;
+    this->seqno = source->seqno;
+    this->len = source->len;
+
+    memcpy(this->data, source->data, source->len);
+}
