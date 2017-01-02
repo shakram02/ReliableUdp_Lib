@@ -204,59 +204,32 @@ src/Checksum.cpp.s:
 	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.s
 .PHONY : src/Checksum.cpp.s
 
-src/DataPacket.o: src/DataPacket.cpp.o
+src/Packet.o: src/Packet.cpp.o
 
-.PHONY : src/DataPacket.o
-
-# target to build an object file
-src/DataPacket.cpp.o:
-	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/DataPacket.cpp.o
-.PHONY : src/DataPacket.cpp.o
-
-src/DataPacket.i: src/DataPacket.cpp.i
-
-.PHONY : src/DataPacket.i
-
-# target to preprocess a source file
-src/DataPacket.cpp.i:
-	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/DataPacket.cpp.i
-.PHONY : src/DataPacket.cpp.i
-
-src/DataPacket.s: src/DataPacket.cpp.s
-
-.PHONY : src/DataPacket.s
-
-# target to generate assembly for a file
-src/DataPacket.cpp.s:
-	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/DataPacket.cpp.s
-.PHONY : src/DataPacket.cpp.s
-
-src/PacketStore.o: src/PacketStore.cpp.o
-
-.PHONY : src/PacketStore.o
+.PHONY : src/Packet.o
 
 # target to build an object file
-src/PacketStore.cpp.o:
-	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/PacketStore.cpp.o
-.PHONY : src/PacketStore.cpp.o
+src/Packet.cpp.o:
+	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o
+.PHONY : src/Packet.cpp.o
 
-src/PacketStore.i: src/PacketStore.cpp.i
+src/Packet.i: src/Packet.cpp.i
 
-.PHONY : src/PacketStore.i
+.PHONY : src/Packet.i
 
 # target to preprocess a source file
-src/PacketStore.cpp.i:
-	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/PacketStore.cpp.i
-.PHONY : src/PacketStore.cpp.i
+src/Packet.cpp.i:
+	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.i
+.PHONY : src/Packet.cpp.i
 
-src/PacketStore.s: src/PacketStore.cpp.s
+src/Packet.s: src/Packet.cpp.s
 
-.PHONY : src/PacketStore.s
+.PHONY : src/Packet.s
 
 # target to generate assembly for a file
-src/PacketStore.cpp.s:
-	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/PacketStore.cpp.s
-.PHONY : src/PacketStore.cpp.s
+src/Packet.cpp.s:
+	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.s
+.PHONY : src/Packet.cpp.s
 
 src/netutils.o: src/netutils.c.o
 
@@ -303,12 +276,9 @@ help:
 	@echo "... src/Checksum.o"
 	@echo "... src/Checksum.i"
 	@echo "... src/Checksum.s"
-	@echo "... src/DataPacket.o"
-	@echo "... src/DataPacket.i"
-	@echo "... src/DataPacket.s"
-	@echo "... src/PacketStore.o"
-	@echo "... src/PacketStore.i"
-	@echo "... src/PacketStore.s"
+	@echo "... src/Packet.o"
+	@echo "... src/Packet.i"
+	@echo "... src/Packet.s"
 	@echo "... src/netutils.o"
 	@echo "... src/netutils.i"
 	@echo "... src/netutils.s"

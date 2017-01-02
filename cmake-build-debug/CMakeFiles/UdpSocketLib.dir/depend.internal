@@ -7,28 +7,21 @@ CMakeFiles/UdpSocketLib.dir/src/netutils.c.o
 CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o
  ../include/AckPacket.h
  ../include/Checksum.h
- ../include/DataPacket.h
+ ../include/Packet.h
  ../include/globaldefs.h
  /home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.cpp
 CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o
  ../include/AckPacket.h
  ../include/BinarySerializer.h
- ../include/DataPacket.h
+ ../include/Packet.h
  ../include/globaldefs.h
  /home/ahmed/code/c/clg_ReliableUdp_Lib/src/BinarySerializer.cpp
 CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o
  ../include/Checksum.h
- ../include/DataPacket.h
+ ../include/Packet.h
  ../include/globaldefs.h
  /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.cpp
-CMakeFiles/UdpSocketLib.dir/src/DataPacket.cpp.o
- ../include/DataPacket.h
+CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o
+ ../include/Packet.h
  ../include/globaldefs.h
- /home/ahmed/code/c/clg_ReliableUdp_Lib/src/DataPacket.cpp
-CMakeFiles/UdpSocketLib.dir/src/PacketStore.cpp.o
- ../include/AckPacket.h
- ../include/Checksum.h
- ../include/DataPacket.h
- ../include/PacketStore.h
- ../include/globaldefs.h
- /home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketStore.cpp
+ /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.cpp

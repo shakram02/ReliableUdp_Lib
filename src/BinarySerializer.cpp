@@ -2,18 +2,18 @@
 // Created by ahmed on 12/24/16.
 //
 
-#include <DataPacket.h>
+#include <Packet.h>
 #include "BinarySerializer.h"
 
-void BinarySerializer::SerializeDataPacket(DataPacket *data_pack, void **projected_data_ptr)
+void BinarySerializer::SerializeDataPacket(Networking::Packet *data_pack, void **projected_data_ptr)
 {
     (*projected_data_ptr) = reinterpret_cast<void *>(data_pack);
 }
 
 void BinarySerializer::DeserializeDataPacket(void *packetBytes,
-        DataPacket **recovered)
+        Networking::Packet **recovered)
 {
-    (*recovered) = reinterpret_cast<DataPacket *>(packetBytes);
+    (*recovered) = reinterpret_cast<Networking::Packet *>(packetBytes);
 }
 
 void BinarySerializer::SerializeAckPacket(AckPacket *ack_pack, void **projected_ack_ptr)

@@ -11,23 +11,27 @@
 ../include/BinarySerializer.h
 AckPacket.h
 ../include/AckPacket.h
+Packet.h
+../include/Packet.h
 
 ../include/Checksum.h
-DataPacket.h
-../include/DataPacket.h
+Packet.h
+../include/Packet.h
 cstdint
 -
 
-../include/DataPacket.h
+../include/Packet.h
 globaldefs.h
 ../include/globaldefs.h
-
-../include/PacketStore.h
-DataPacket.h
-../include/DataPacket.h
-AckPacket.h
-../include/AckPacket.h
-Checksum.h
+memory
+-
+iostream
+-
+cstring
+-
+vector
+-
+deque
 -
 
 ../include/globaldefs.h
@@ -39,7 +43,7 @@ AckPacket.h
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.h
 
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/BinarySerializer.cpp
-DataPacket.h
+Packet.h
 -
 BinarySerializer.h
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/BinarySerializer.h
@@ -48,17 +52,7 @@ BinarySerializer.h
 Checksum.h
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.h
 
-/home/ahmed/code/c/clg_ReliableUdp_Lib/src/DataPacket.cpp
-iostream
--
-cstring
--
-DataPacket.h
-/home/ahmed/code/c/clg_ReliableUdp_Lib/src/DataPacket.h
-
-/home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketStore.cpp
-malloc.h
--
-PacketStore.h
-/home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketStore.h
+/home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.cpp
+Packet.h
+/home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.h
 
