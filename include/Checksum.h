@@ -5,7 +5,7 @@
 #ifndef ENHANCEDUDPCLIENT_CHECKSUM_H
 #define ENHANCEDUDPCLIENT_CHECKSUM_H
 
-#include "DataPacket.h"
+#include "Packet.h"
 #include <cstdint>
 
 
@@ -19,7 +19,7 @@ public:
       * @param packet input packet
       * @return 32-bit checksum
       */
-    static uint32_t Create(DataPacket packet);
+    static uint32_t Create(Networking::Packet packet);
 };
 
 

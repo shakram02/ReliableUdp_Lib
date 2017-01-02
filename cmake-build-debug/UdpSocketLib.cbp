@@ -89,9 +89,6 @@
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/BinarySerializer.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
-		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/PacketStore.h">
-			<Option target="UdpSocketLib"/>
-		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/globaldefs.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
@@ -104,10 +101,7 @@
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
-		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/DataPacket.cpp">
-			<Option target="UdpSocketLib"/>
-		</Unit>
-		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketStore.cpp">
+		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/netutils.c">

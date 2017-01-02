@@ -17,8 +17,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.cpp" "/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o"
   "/home/ahmed/code/c/clg_ReliableUdp_Lib/src/BinarySerializer.cpp" "/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o"
   "/home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.cpp" "/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o"
-  "/home/ahmed/code/c/clg_ReliableUdp_Lib/src/DataPacket.cpp" "/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/DataPacket.cpp.o"
-  "/home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketStore.cpp" "/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/PacketStore.cpp.o"
+  "/home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.cpp" "/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -5,7 +5,7 @@
 #include "Checksum.h"
 
 
-uint32_t Checksum::Create(DataPacket packet)
+uint32_t Checksum::Create(Networking::Packet  packet)
 {
     return 0;
 }

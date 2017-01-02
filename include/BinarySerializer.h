@@ -7,6 +7,7 @@
 
 
 #include "AckPacket.h"
+#include "Packet.h"
 
 class BinarySerializer
 {
@@ -16,7 +17,7 @@ public:
      * @param data_pack Input data packet
      * @param projected_data_ptr Pointer to the re-projected raw ACK packet
      */
-    static void SerializeDataPacket(DataPacket *data_pack, void **projected_data_ptr);
+    static void SerializeDataPacket(Networking::Packet  *data_pack, void **projected_data_ptr);
 
     /**
      * Takes an ACK packet and converts it to raw binary data
@@ -37,7 +38,7 @@ public:
      * @param packet_len Length of the binary data array
      * @return A reconstructed DataPacket from the provided binary data
      */
-    static void DeserializeDataPacket(void *packetBytes, DataPacket **recovered);
+    static void DeserializeDataPacket(void *packetBytes, Networking::Packet  **recovered);
 
     /**
      * Takes an array of raw binary data and returns its equivalent ACK Packet
