@@ -8,20 +8,11 @@ CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o
  ../include/AckPacket.h
  ../include/Checksum.h
  ../include/Packet.h
- ../include/globaldefs.h
  /home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.cpp
-CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o
- ../include/AckPacket.h
- ../include/BinarySerializer.h
- ../include/Packet.h
- ../include/globaldefs.h
- /home/ahmed/code/c/clg_ReliableUdp_Lib/src/BinarySerializer.cpp
 CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o
  ../include/Checksum.h
  ../include/Packet.h
- ../include/globaldefs.h
  /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.cpp
 CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o
  ../include/Packet.h
- ../include/globaldefs.h
  /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.cpp

@@ -12,7 +12,7 @@ file(GLOB SOURCES "src/*.cpp" "src/*.c")
 #file(GLOB SOURCES "src/*.cChecksum.cpp")
 
 #Generate the shared library from the sources
-add_library(UdpSocketLib SHARED ${SOURCES} src/BinarySerializer.cpp include/BinarySerializer.h include/globaldefs.h)
+add_library(UdpSocketLib SHARED ${SOURCES} include/globaldefs.h)
 
 #set(SOURCE_FILES main.cpp)
 #add_executable(UdpSocketLib ${SOURCE_FILES})

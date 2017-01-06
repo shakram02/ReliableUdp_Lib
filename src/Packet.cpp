@@ -1,124 +1,90 @@
 //
-// Created by ahmed on 12/24/16.
+// Created by ahmed on 1/5/17.
 //
-
 
 #include "Packet.h"
 
-using namespace Networking;
+using std::unique_ptr;
 
 Packet::Packet()
+{
+    this->data = unique_ptr<ByteVector>(new ByteVector());
+}
+
+Packet::~Packet()
 {}
 
-Packet::Packet(std::vector<byte> &data_bytes, unsigned short data_len, unsigned int seq_no)
+Packet::Packet(unique_ptr<ByteVector> &data, unsigned int seq_no)
 {
-    if (data_len > DATA_FRAGMENT_SIZE) {
+    if (data->size() > DATA_FRAGMENT_SIZE) {
         throw std::invalid_argument("Data length is bigger than the packet pckt_data field");
     }
 
-    std::cout << "String length:" << data_len << std::endl;
-
-    this->chksum = 24930;
-    this->seqno = 23;
-    this->len = data_len;
-    this->data = unique_ptr<byte>(new byte[data_len]());
-    memset(reinterpret_cast<void *>(this->data.get()), 0, data_len);
-    memcpy(this->data.get(), data_bytes.data(), data_len);
-
-    for (int i = 0; i < data_len; ++i) {
-        (this->data.get())[i] = data_bytes[i];
-    }
-
+    this->chksum = 24930;   // Special value
+    this->seqno = seq_no;
+    this->len = (unsigned short) data->size();
+    this->data = (std::move(data));
+    data = nullptr;
 }
 
-Packet::Packet(Packet &&other)
-{
-    this->chksum = other.chksum;
-    this->seqno = other.seqno;
-    this->len = other.len;
-    this->data = std::move(other.data);
-
-    other.data = nullptr;
-    other.chksum = 0;
-    other.seqno = 0;
-    other.len = 0;
-}
-
-Packet &Packet::operator=(Packet &&other)
-{
-    Packet(std::move(other));
-    return *this;
-}
-
-unique_ptr<std::deque<byte>> Packet::Serialize()
+unique_ptr<ByteList> Packet::Serialize()
 {
     // Put the binary representation of each field and the content
     // of the data pointer into the char[]
 
-    std::deque<byte> *buffer = new std::deque<byte>();
-    Serialize(this->len, buffer);
-    Serialize(this->seqno, buffer);
+    ByteList *buffer = new ByteList();
 
-    const byte *traverser = this->data.get();
+    SerializeValue<unsigned short>(&(this->len), *buffer);
+    SerializeValue<unsigned short>(&(this->chksum), *buffer);
+    SerializeValue<unsigned int>(&(this->seqno), *buffer);
 
     for (int i = 0; i < this->len; ++i) {
-        buffer->push_back(traverser[i]);
-    }
-    return unique_ptr<std::deque<byte>>(buffer);
-}
-
-unique_ptr<Packet> Deserialize(std::deque<byte> bytes)
-{
-
-}
-
-void Packet::Serialize(unsigned short data, std::deque<byte> *bytes)
-{
-    // Use hton() here, to make it compatible across processors
-    byte *projected = reinterpret_cast<byte *>(&data);
-    for (int i = 0; i < sizeof(short); ++i) {
-        bytes->push_back(projected[i]);
-    }
-}
-
-void Packet::Serialize(unsigned int data, std::deque<byte> *bytes)
-{
-    // Use hton() here, to make it compatible across processors
-    byte *projected = reinterpret_cast<byte *>(&data);
-    for (int i = 0; i < sizeof(int); ++i) {
-        bytes->push_back(projected[i]);
-    }
-}
-
-/// TODO Add template specialization for data
-unique_ptr<std::vector<byte>> Packet::DeSerializeData(std::deque<byte> *bytes, unsigned short length)
-{
-    std::cout << "Length:" << length << std::endl;
-
-    // TODO do sanity checks on length?, use the remaining bytes in the deque anyway ?
-    std::vector<byte> *result = new std::vector<byte>();
-    result->reserve(length);
-
-    for (int i = 0; i < length; ++i) {
-
-        // TODO memory leak ?
-        auto byte_d = DeSerialize<byte>(bytes).release();
-        result->push_back(*byte_d);
-    }
-    return unique_ptr<std::vector<byte>>(result);
-}
-
-template<typename T>
-unique_ptr<T> Packet::DeSerialize(std::deque<byte> *bytes)
-{
-    T *result = new T();
-
-    for (int i = 0; i < sizeof(T); ++i) {
-
-        ((byte *) result)[i] = bytes->front();
-
-        bytes->pop_front();
+        // TODO move data content to the output list
+        buffer->push_back((this->data->operator[](i)));
     }
 
-    return unique_ptr<T>(result);
+    return unique_ptr<std::list<byte>>(buffer);
+}
+
+// TODO Add template specialization for data ( data bytes in packet )
+unique_ptr<Packet> Packet::Create(byte serializedPacket[], unsigned short arrayLength)
+{
+    if (arrayLength < (sizeof(unsigned short) + sizeof(unsigned int))) {
+        throw std::invalid_argument("Length of raw packet is less than the minimal size");
+    }
+
+    Packet *p = new Packet();
+
+    // The code is detailed for readability
+    unsigned short len = DeSerialize<unsigned short>(serializedPacket, 0);
+    unsigned short checksum = DeSerialize<unsigned short>(serializedPacket, sizeof(len));
+    unsigned int seqno = DeSerialize<unsigned int>(serializedPacket, sizeof(len) + sizeof(checksum));
+
+    p->len = len;
+    p->seqno = seqno;
+    p->chksum = checksum;
+
+    int dataStartIndex = sizeof(len) + sizeof(checksum) + sizeof(seqno);
+
+    if (len != (arrayLength - dataStartIndex)) {
+        throw std::runtime_error(
+                "packet length or content is corrupted,packet -extracted- len:" + std::to_string(len)
+                + " , actual length:" + std::to_string((arrayLength - dataStartIndex)));
+    }
+
+    p->data->reserve(len);  // Prevent the vector from re-allocating memory
+
+    for (int i = dataStartIndex; i < arrayLength; ++i) {
+
+        // Deserialize the byte from the binary data
+        byte b = DeSerialize<byte>(serializedPacket, i);
+        p->data->push_back(b);
+    }
+
+    return unique_ptr<Packet>(p);
+}
+
+const ByteVector Packet::GetData() const
+{
+    return *data;
 }

@@ -8,12 +8,6 @@
 
 ../include/AckPacket.h
 
-../include/BinarySerializer.h
-AckPacket.h
-../include/AckPacket.h
-Packet.h
-../include/Packet.h
-
 ../include/Checksum.h
 Packet.h
 ../include/Packet.h
@@ -21,32 +15,20 @@ cstdint
 -
 
 ../include/Packet.h
-globaldefs.h
-../include/globaldefs.h
-memory
--
-iostream
--
-cstring
--
 vector
 -
-deque
+list
 -
-
-../include/globaldefs.h
+sstream
+-
+memory
+-
 
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.cpp
 Checksum.h
 -
 AckPacket.h
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.h
-
-/home/ahmed/code/c/clg_ReliableUdp_Lib/src/BinarySerializer.cpp
-Packet.h
--
-BinarySerializer.h
-/home/ahmed/code/c/clg_ReliableUdp_Lib/src/BinarySerializer.h
 
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.cpp
 Checksum.h

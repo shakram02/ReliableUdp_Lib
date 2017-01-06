@@ -15,7 +15,6 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.cpp" "/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o"
-  "/home/ahmed/code/c/clg_ReliableUdp_Lib/src/BinarySerializer.cpp" "/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o"
   "/home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.cpp" "/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o"
   "/home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.cpp" "/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o"
   )

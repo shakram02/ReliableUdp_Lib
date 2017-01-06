@@ -150,33 +150,6 @@ src/AckPacket.cpp.s:
 	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.s
 .PHONY : src/AckPacket.cpp.s
 
-src/BinarySerializer.o: src/BinarySerializer.cpp.o
-
-.PHONY : src/BinarySerializer.o
-
-# target to build an object file
-src/BinarySerializer.cpp.o:
-	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o
-.PHONY : src/BinarySerializer.cpp.o
-
-src/BinarySerializer.i: src/BinarySerializer.cpp.i
-
-.PHONY : src/BinarySerializer.i
-
-# target to preprocess a source file
-src/BinarySerializer.cpp.i:
-	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.i
-.PHONY : src/BinarySerializer.cpp.i
-
-src/BinarySerializer.s: src/BinarySerializer.cpp.s
-
-.PHONY : src/BinarySerializer.s
-
-# target to generate assembly for a file
-src/BinarySerializer.cpp.s:
-	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.s
-.PHONY : src/BinarySerializer.cpp.s
-
 src/Checksum.o: src/Checksum.cpp.o
 
 .PHONY : src/Checksum.o
@@ -270,9 +243,6 @@ help:
 	@echo "... src/AckPacket.o"
 	@echo "... src/AckPacket.i"
 	@echo "... src/AckPacket.s"
-	@echo "... src/BinarySerializer.o"
-	@echo "... src/BinarySerializer.i"
-	@echo "... src/BinarySerializer.s"
 	@echo "... src/Checksum.o"
 	@echo "... src/Checksum.i"
 	@echo "... src/Checksum.s"
