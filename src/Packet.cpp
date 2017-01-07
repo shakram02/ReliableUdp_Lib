@@ -3,7 +3,10 @@
 //
 
 #include "Packet.h"
+#include<iostream>
 
+using std::cout;
+using std::endl;
 using std::unique_ptr;
 
 Packet::Packet()
@@ -16,63 +19,72 @@ Packet::~Packet()
 
 Packet::Packet(unique_ptr<ByteVector> &data, unsigned int seq_no)
 {
-    if (data->size() > DATA_FRAGMENT_SIZE) {
-        throw std::invalid_argument("Data length is bigger than the packet pckt_data field");
+    // A reference to a unique_ptr is needed so the pointer can be invalidated
+
+
+    unsigned short checksum = 24930;   // Special value
+
+    if (data != nullptr) {
+        if (data->size() > DATA_FRAGMENT_SIZE) {
+            throw std::invalid_argument("Data length is bigger than the packet pckt_data field");
+        }
+        this->header = unique_ptr<PacketHeader>(new PacketHeader(seq_no,
+                (unsigned short) data->size(), checksum));
+
+        this->data = (std::move(data));
+    } else {
+
+        // ACK packet
+        this->data = nullptr;
+        this->header = unique_ptr<PacketHeader>(new PacketHeader(seq_no, 0, checksum));
     }
 
-    this->chksum = 24930;   // Special value
-    this->seqno = seq_no;
-    this->len = (unsigned short) data->size();
-    this->data = (std::move(data));
-    data = nullptr;
+    data.reset(nullptr);
 }
 
-unique_ptr<ByteList> Packet::Serialize()
+unique_ptr<ByteVector> Packet::Serialize()
 {
-    // Put the binary representation of each field and the content
-    // of the data pointer into the char[]
+    // Reserve the size of the whole packet
+    ByteVector *buffer = new ByteVector();
+    buffer->reserve((unsigned long) (this->header->dataLen + header->Size()));
 
-    ByteList *buffer = new ByteList();
+    unique_ptr<ByteVector> serializedHeader = this->header->Serialize();
 
-    SerializeValue<unsigned short>(&(this->len), *buffer);
-    SerializeValue<unsigned short>(&(this->chksum), *buffer);
-    SerializeValue<unsigned int>(&(this->seqno), *buffer);
-
-    for (int i = 0; i < this->len; ++i) {
-        // TODO move data content to the output list
-        buffer->push_back((this->data->operator[](i)));
+    buffer->insert(buffer->begin(), serializedHeader->begin(), serializedHeader->end());
+    if (data) {
+        buffer->insert(buffer->end(), this->data->begin(), this->data->end());
     }
 
-    return unique_ptr<std::list<byte>>(buffer);
+    return unique_ptr<ByteVector>(buffer);
 }
 
 // TODO Add template specialization for data ( data bytes in packet )
 unique_ptr<Packet> Packet::Create(byte serializedPacket[], unsigned short arrayLength)
 {
-    if (arrayLength < (sizeof(unsigned short) + sizeof(unsigned int))) {
+    if (arrayLength < PacketHeader::Size()) {
         throw std::invalid_argument("Length of raw packet is less than the minimal size");
     }
 
     Packet *p = new Packet();
 
-    // The code is detailed for readability
-    unsigned short len = DeSerialize<unsigned short>(serializedPacket, 0);
-    unsigned short checksum = DeSerialize<unsigned short>(serializedPacket, sizeof(len));
-    unsigned int seqno = DeSerialize<unsigned int>(serializedPacket, sizeof(len) + sizeof(checksum));
+    p->header = PacketHeader::Deserialize(serializedPacket);
 
-    p->len = len;
-    p->seqno = seqno;
-    p->chksum = checksum;
+    // ACK Packet, nothing to be done
+    if (arrayLength == PacketHeader::Size()) return unique_ptr<Packet>(p);
 
-    int dataStartIndex = sizeof(len) + sizeof(checksum) + sizeof(seqno);
+    int dataStartIndex = PacketHeader::Size();
 
-    if (len != (arrayLength - dataStartIndex)) {
+
+    if (p->header->dataLen != (arrayLength - dataStartIndex)) {
+        // Sanity check, will surely prove useful sometime later
         throw std::runtime_error(
-                "packet length or content is corrupted,packet -extracted- len:" + std::to_string(len)
+                "packet length or content is corrupted,packet -extracted- len:" +
+                std::to_string(p->header->dataLen)
                 + " , actual length:" + std::to_string((arrayLength - dataStartIndex)));
     }
 
-    p->data->reserve(len);  // Prevent the vector from re-allocating memory
+
+    p->data->reserve(p->header->dataLen);  // Prevent the vector from re-allocating memory
 
     for (int i = dataStartIndex; i < arrayLength; ++i) {
 
@@ -84,7 +96,12 @@ unique_ptr<Packet> Packet::Create(byte serializedPacket[], unsigned short arrayL
     return unique_ptr<Packet>(p);
 }
 
-const ByteVector Packet::GetData() const
+bool Packet::GetData(unique_ptr<ByteVector> &output)
 {
-    return *data;
+    if (header->dataLen != 0) {
+        output.reset(data.release());
+        return true;
+    }
+    return false;
+
 }

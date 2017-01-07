@@ -5,18 +5,15 @@
 #ifndef ENHANCEDUDPLIB_PACKET_H
 #define ENHANCEDUDPLIB_PACKET_H
 
-#define DATA_FRAGMENT_SIZE 512
 
+#include "UdpLibGlobaldefs.h"
 #include <vector>
-#include <list>
-#include <sstream>
 #include <memory>
+#include <sstream>
+#include <PacketHeader.h>
 
 using std::unique_ptr;
 
-typedef unsigned char byte;
-typedef std::vector<byte> ByteVector;
-typedef std::list<byte> ByteList;
 
 /**
  *  Represents a data packet, this class is immutable
@@ -47,23 +44,11 @@ private:
     static inline T DeSerialize(byte bytes[], int startIndex);
 
     template<typename T>
-    void SerializeValue(T *val, ByteList &bytes);
+    void SerializeValue(T *val, ByteVector &bytes);
+
 
 public:
-
-    /**
-     * Checksum for all the other fields in the packet
-     */
-    unsigned short chksum;
-    /**
-     * Length of data inside the data field
-     * Header + data
-     */
-    unsigned short len;
-    /**
-     * Sequence number of the packet
-     */
-    unsigned int seqno;
+    unique_ptr<PacketHeader> header;
 
     /**
      * Creates a data packet by copying the data supplied in *data to the
@@ -77,13 +62,13 @@ public:
      * Transforms the content of the packet to an array of bytes
      * @return Serialized byte array
      */
-    unique_ptr<ByteList> Serialize();
+    unique_ptr<ByteVector> Serialize();
 
     /**
      * Returns the data stored in a packet
      * @return Byte data in the packet
      */
-    const ByteVector GetData() const;
+    bool GetData(unique_ptr<ByteVector> &output);
 
     /**
      * Creates a packet instance from given raw data
@@ -139,7 +124,7 @@ inline T Packet::DeSerialize(byte bytes[], int startIndex)
 }
 
 template<typename T>
-void Packet::SerializeValue(T *val, ByteList &bytes)
+void Packet::SerializeValue(T *val, ByteVector &bytes)
 {
     for (int i = 0; i < sizeof(T); ++i) {
         byte temp = ((byte *) (val))[i];

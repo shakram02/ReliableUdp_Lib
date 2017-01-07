@@ -57,33 +57,9 @@ include CMakeFiles/UdpSocketLib.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/UdpSocketLib.dir/flags.make
 
-CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o: CMakeFiles/UdpSocketLib.dir/flags.make
-CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o: ../src/AckPacket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o -c /home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.cpp
-
-CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.cpp > CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.i
-
-CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.cpp -o CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.s
-
-CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o.requires:
-
-.PHONY : CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o.requires
-
-CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o.provides: CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o.requires
-	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o.provides.build
-.PHONY : CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o.provides
-
-CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o.provides.build: CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o
-
-
 CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o: CMakeFiles/UdpSocketLib.dir/flags.make
 CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o: ../src/Checksum.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o -c /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.cpp
 
 CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.i: cmake_force
@@ -107,7 +83,7 @@ CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o.provides.build: CMakeFiles/UdpSoc
 
 CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o: CMakeFiles/UdpSocketLib.dir/flags.make
 CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o: ../src/Packet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o -c /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.cpp
 
 CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.i: cmake_force
@@ -127,6 +103,30 @@ CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o.provides: CMakeFiles/UdpSocketLib.d
 .PHONY : CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o.provides
 
 CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o.provides.build: CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o
+
+
+CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o: CMakeFiles/UdpSocketLib.dir/flags.make
+CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o: ../src/PacketHeader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ahmed/code/c/clg_ReliableUdp_Lib/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o -c /home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketHeader.cpp
+
+CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketHeader.cpp > CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.i
+
+CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketHeader.cpp -o CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.s
+
+CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o.requires:
+
+.PHONY : CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o.requires
+
+CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o.provides: CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o.requires
+	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o.provides.build
+.PHONY : CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o.provides
+
+CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o.provides.build: CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o
 
 
 CMakeFiles/UdpSocketLib.dir/src/netutils.c.o: CMakeFiles/UdpSocketLib.dir/flags.make
@@ -155,17 +155,17 @@ CMakeFiles/UdpSocketLib.dir/src/netutils.c.o.provides.build: CMakeFiles/UdpSocke
 
 # Object files for target UdpSocketLib
 UdpSocketLib_OBJECTS = \
-"CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o" \
 "CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o" \
 "CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o" \
+"CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o" \
 "CMakeFiles/UdpSocketLib.dir/src/netutils.c.o"
 
 # External object files for target UdpSocketLib
 UdpSocketLib_EXTERNAL_OBJECTS =
 
-libUdpSocketLib.so: CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o
 libUdpSocketLib.so: CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o
 libUdpSocketLib.so: CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o
+libUdpSocketLib.so: CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o
 libUdpSocketLib.so: CMakeFiles/UdpSocketLib.dir/src/netutils.c.o
 libUdpSocketLib.so: CMakeFiles/UdpSocketLib.dir/build.make
 libUdpSocketLib.so: CMakeFiles/UdpSocketLib.dir/link.txt
@@ -177,9 +177,9 @@ CMakeFiles/UdpSocketLib.dir/build: libUdpSocketLib.so
 
 .PHONY : CMakeFiles/UdpSocketLib.dir/build
 
-CMakeFiles/UdpSocketLib.dir/requires: CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o.requires
 CMakeFiles/UdpSocketLib.dir/requires: CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o.requires
 CMakeFiles/UdpSocketLib.dir/requires: CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o.requires
+CMakeFiles/UdpSocketLib.dir/requires: CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o.requires
 CMakeFiles/UdpSocketLib.dir/requires: CMakeFiles/UdpSocketLib.dir/src/netutils.c.o.requires
 
 .PHONY : CMakeFiles/UdpSocketLib.dir/requires

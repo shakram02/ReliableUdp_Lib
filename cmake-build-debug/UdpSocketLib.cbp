@@ -86,16 +86,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/globaldefs.h">
-			<Option target="UdpSocketLib"/>
-		</Unit>
-		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.cpp">
+		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/UdpLibGlobaldefs.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.cpp">
+			<Option target="UdpSocketLib"/>
+		</Unit>
+		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketHeader.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/netutils.c">
