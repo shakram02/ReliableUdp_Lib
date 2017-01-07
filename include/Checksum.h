@@ -19,7 +19,7 @@ public:
       * @param packet input packet
       * @return 32-bit checksum
       */
-    static uint32_t Create(Networking::Packet packet);
+    static uint32_t Create(Packet packet);
 };
 
 

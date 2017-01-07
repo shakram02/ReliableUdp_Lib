@@ -4,24 +4,18 @@
 CMakeFiles/UdpSocketLib.dir/src/netutils.c.o
  ../include/netutils.h
  /home/ahmed/code/c/clg_ReliableUdp_Lib/src/netutils.c
-CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o
- ../include/AckPacket.h
- ../include/Checksum.h
- ../include/Packet.h
- ../include/globaldefs.h
- /home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.cpp
-CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o
- ../include/AckPacket.h
- ../include/BinarySerializer.h
- ../include/Packet.h
- ../include/globaldefs.h
- /home/ahmed/code/c/clg_ReliableUdp_Lib/src/BinarySerializer.cpp
 CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o
  ../include/Checksum.h
  ../include/Packet.h
- ../include/globaldefs.h
+ ../include/PacketHeader.h
+ ../include/UdpLibGlobaldefs.h
  /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.cpp
 CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o
  ../include/Packet.h
- ../include/globaldefs.h
+ ../include/PacketHeader.h
+ ../include/UdpLibGlobaldefs.h
  /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.cpp
+CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o
+ ../include/PacketHeader.h
+ ../include/UdpLibGlobaldefs.h
+ /home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketHeader.cpp

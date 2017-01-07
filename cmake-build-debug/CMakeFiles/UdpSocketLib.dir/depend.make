@@ -4,24 +4,18 @@
 CMakeFiles/UdpSocketLib.dir/src/netutils.c.o: ../include/netutils.h
 CMakeFiles/UdpSocketLib.dir/src/netutils.c.o: ../src/netutils.c
 
-CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o: ../include/AckPacket.h
-CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o: ../include/Checksum.h
-CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o: ../include/Packet.h
-CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o: ../include/globaldefs.h
-CMakeFiles/UdpSocketLib.dir/src/AckPacket.cpp.o: ../src/AckPacket.cpp
-
-CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o: ../include/AckPacket.h
-CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o: ../include/BinarySerializer.h
-CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o: ../include/Packet.h
-CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o: ../include/globaldefs.h
-CMakeFiles/UdpSocketLib.dir/src/BinarySerializer.cpp.o: ../src/BinarySerializer.cpp
-
 CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o: ../include/Checksum.h
 CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o: ../include/Packet.h
-CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o: ../include/globaldefs.h
+CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o: ../include/PacketHeader.h
+CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o: ../include/UdpLibGlobaldefs.h
 CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o: ../src/Checksum.cpp
 
 CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o: ../include/Packet.h
-CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o: ../include/globaldefs.h
+CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o: ../include/PacketHeader.h
+CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o: ../include/UdpLibGlobaldefs.h
 CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o: ../src/Packet.cpp
+
+CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o: ../include/PacketHeader.h
+CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o: ../include/UdpLibGlobaldefs.h
+CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o: ../src/PacketHeader.cpp
 

@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../include/AckPacket.h
-
-../include/BinarySerializer.h
-AckPacket.h
-../include/AckPacket.h
-Packet.h
-../include/Packet.h
-
 ../include/Checksum.h
 Packet.h
 ../include/Packet.h
@@ -21,32 +13,28 @@ cstdint
 -
 
 ../include/Packet.h
-globaldefs.h
-../include/globaldefs.h
-memory
--
-iostream
--
-cstring
--
+UdpLibGlobaldefs.h
+../include/UdpLibGlobaldefs.h
 vector
 -
-deque
+memory
+-
+sstream
+-
+PacketHeader.h
 -
 
-../include/globaldefs.h
-
-/home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.cpp
-Checksum.h
+../include/PacketHeader.h
+UdpLibGlobaldefs.h
+../include/UdpLibGlobaldefs.h
+memory
 -
-AckPacket.h
-/home/ahmed/code/c/clg_ReliableUdp_Lib/src/AckPacket.h
 
-/home/ahmed/code/c/clg_ReliableUdp_Lib/src/BinarySerializer.cpp
-Packet.h
+../include/UdpLibGlobaldefs.h
+vector
 -
-BinarySerializer.h
-/home/ahmed/code/c/clg_ReliableUdp_Lib/src/BinarySerializer.h
+memory
+-
 
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.cpp
 Checksum.h
@@ -55,4 +43,10 @@ Checksum.h
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.cpp
 Packet.h
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.h
+iostream
+-
+
+/home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketHeader.cpp
+PacketHeader.h
+/home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketHeader.h
 

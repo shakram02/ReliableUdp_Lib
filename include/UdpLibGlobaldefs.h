@@ -9,4 +9,9 @@
 // Don't allocate so much memory, stack memory runs out
 #define DATA_FRAGMENT_SIZE 64
 
+#include <vector>
+#include <memory>
+typedef unsigned char byte;
+typedef std::vector<byte> ByteVector;
+
 #endif //UDPSOCKETLIB_GLOBALDEFS_H
