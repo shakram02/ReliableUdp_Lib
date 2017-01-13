@@ -204,6 +204,33 @@ src/PacketHeader.cpp.s:
 	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.s
 .PHONY : src/PacketHeader.cpp.s
 
+src/RawUdpSocket.o: src/RawUdpSocket.cpp.o
+
+.PHONY : src/RawUdpSocket.o
+
+# target to build an object file
+src/RawUdpSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/RawUdpSocket.cpp.o
+.PHONY : src/RawUdpSocket.cpp.o
+
+src/RawUdpSocket.i: src/RawUdpSocket.cpp.i
+
+.PHONY : src/RawUdpSocket.i
+
+# target to preprocess a source file
+src/RawUdpSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/RawUdpSocket.cpp.i
+.PHONY : src/RawUdpSocket.cpp.i
+
+src/RawUdpSocket.s: src/RawUdpSocket.cpp.s
+
+.PHONY : src/RawUdpSocket.s
+
+# target to generate assembly for a file
+src/RawUdpSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/RawUdpSocket.cpp.s
+.PHONY : src/RawUdpSocket.cpp.s
+
 src/netutils.o: src/netutils.c.o
 
 .PHONY : src/netutils.o
@@ -249,6 +276,9 @@ help:
 	@echo "... src/PacketHeader.o"
 	@echo "... src/PacketHeader.i"
 	@echo "... src/PacketHeader.s"
+	@echo "... src/RawUdpSocket.o"
+	@echo "... src/RawUdpSocket.i"
+	@echo "... src/RawUdpSocket.s"
 	@echo "... src/netutils.o"
 	@echo "... src/netutils.i"
 	@echo "... src/netutils.s"

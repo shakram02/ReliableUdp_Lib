@@ -43,6 +43,12 @@ private:
     template<typename T>
     static inline T DeSerialize(byte bytes[], int startIndex);
 
+    /**
+     * Serializes a field to it's raw format (bytes)
+     * @tparam T Type of the value to be serialized
+     * @param val Pointer of the value to be serialized
+     * @param bytes Output vector
+     */
     template<typename T>
     void SerializeValue(T *val, ByteVector &bytes);
 
@@ -91,7 +97,7 @@ public:
      * Move assignment operator, deleted as this is an immutable type
      * @param source Source Packet location
      */
-    Packet &operator=(Packet &&other)= delete;
+    Packet &operator=(Packet &&other);
 
     /**
      * The copy constructor isn't needed, this is an immutable object
@@ -110,7 +116,6 @@ public:
 template<typename T>
 inline T Packet::DeSerialize(byte bytes[], int startIndex)
 {
-    // put a static field to remember the last start index ? -more readability-
     T result = 0;
     T *resultPtr = &result;
     int length = sizeof(T);
@@ -131,6 +136,5 @@ void Packet::SerializeValue(T *val, ByteVector &bytes)
         bytes.push_back(temp);
     }
 }
-
 
 #endif //ENHANCEDUDPLIB_PACKET_H

@@ -86,6 +86,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/AddressInfo.h">
+			<Option target="UdpSocketLib"/>
+		</Unit>
+		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/RawUdpSocket.h">
+			<Option target="UdpSocketLib"/>
+		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/UdpLibGlobaldefs.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
@@ -96,6 +102,9 @@
 			<Option target="UdpSocketLib"/>
 		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketHeader.cpp">
+			<Option target="UdpSocketLib"/>
+		</Unit>
+		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/RawUdpSocket.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/netutils.c">

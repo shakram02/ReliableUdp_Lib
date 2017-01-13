@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../include/AddressInfo.h
+string
+-
+
 ../include/Checksum.h
 Packet.h
 ../include/Packet.h
@@ -30,6 +34,20 @@ UdpLibGlobaldefs.h
 memory
 -
 
+../include/RawUdpSocket.h
+arpa/inet.h
+-
+string
+-
+vector
+-
+memory
+-
+AddressInfo.h
+../include/AddressInfo.h
+Packet.h
+../include/Packet.h
+
 ../include/UdpLibGlobaldefs.h
 vector
 -
@@ -49,4 +67,14 @@ iostream
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketHeader.cpp
 PacketHeader.h
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/PacketHeader.h
+
+/home/ahmed/code/c/clg_ReliableUdp_Lib/src/RawUdpSocket.cpp
+RawUdpSocket.h
+/home/ahmed/code/c/clg_ReliableUdp_Lib/src/RawUdpSocket.h
+unistd.h
+-
+cstring
+-
+UdpLibGlobaldefs.h
+/home/ahmed/code/c/clg_ReliableUdp_Lib/src/UdpLibGlobaldefs.h
 

@@ -19,3 +19,10 @@ CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o: ../include/PacketHeader.h
 CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o: ../include/UdpLibGlobaldefs.h
 CMakeFiles/UdpSocketLib.dir/src/PacketHeader.cpp.o: ../src/PacketHeader.cpp
 
+CMakeFiles/UdpSocketLib.dir/src/RawUdpSocket.cpp.o: ../include/AddressInfo.h
+CMakeFiles/UdpSocketLib.dir/src/RawUdpSocket.cpp.o: ../include/Packet.h
+CMakeFiles/UdpSocketLib.dir/src/RawUdpSocket.cpp.o: ../include/PacketHeader.h
+CMakeFiles/UdpSocketLib.dir/src/RawUdpSocket.cpp.o: ../include/RawUdpSocket.h
+CMakeFiles/UdpSocketLib.dir/src/RawUdpSocket.cpp.o: ../include/UdpLibGlobaldefs.h
+CMakeFiles/UdpSocketLib.dir/src/RawUdpSocket.cpp.o: ../src/RawUdpSocket.cpp
+

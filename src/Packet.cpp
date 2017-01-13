@@ -70,9 +70,9 @@ unique_ptr<Packet> Packet::Create(byte serializedPacket[], unsigned short arrayL
     p->header = PacketHeader::Deserialize(serializedPacket);
 
     // ACK Packet, nothing to be done
-    if (arrayLength == PacketHeader::Size()) return unique_ptr<Packet>(p);
-
     int dataStartIndex = PacketHeader::Size();
+
+    if (arrayLength == dataStartIndex) return unique_ptr<Packet>(p);
 
 
     if (p->header->dataLen != (arrayLength - dataStartIndex)) {
@@ -104,4 +104,29 @@ bool Packet::GetData(unique_ptr<ByteVector> &output)
     }
     return false;
 
+}
+
+//Packet::Packet(Packet &&other)
+//{
+////    this->header->chksum = other.header->chksum;
+////    this->header->dataLen = other.header->dataLen;
+////    this->header->seqno = other.header->seqno;
+////
+////    this->data = std::move(other.data);
+////
+////    other.data.reset();
+//    *this = std::move(other);
+//}
+
+Packet &Packet::operator=(Packet &&other)
+{
+    this->header->chksum = other.header->chksum;
+    this->header->dataLen = other.header->dataLen;
+    this->header->seqno = other.header->seqno;
+
+    this->data = std::move(other.data);
+
+    other.data.reset();
+
+    return *this;
 }
