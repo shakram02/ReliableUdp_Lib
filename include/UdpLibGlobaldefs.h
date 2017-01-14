@@ -8,8 +8,12 @@
 // TODO remove this after testing that it can be unbound
 // IMPORTANT the total size of the class can't exceed 256 bytes
 // Don't allocate so much memory, stack memory runs out
-#define DATA_FRAGMENT_SIZE 64
+#define DATA_FRAGMENT_SIZE 128
 #define UDP_MTU 256
+
+#define HANDSHAKE "hndshk"
+#define PCKT_SLEEP 500
+
 #include <vector>
 #include <memory>
 typedef unsigned char byte;

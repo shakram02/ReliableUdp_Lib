@@ -5,6 +5,8 @@
 #include "RawUdpSocket.h"
 #include <unistd.h>
 #include <cstring>
+#include <chrono>
+#include <thread>
 #include "UdpLibGlobaldefs.h"
 
 RawUdpSocket::RawUdpSocket(AddressInfo &info)
@@ -24,12 +26,31 @@ RawUdpSocket::RawUdpSocket(AddressInfo &info)
         LogError("Failed to create socket");
     }
 
-    unsigned int namelen = sizeof(this->socket_info);
-    if (getsockname(this->socket_fd, (struct sockaddr *) &socket_info, &namelen) < 0) {
-        LogError("Failed to get socket name");
-    }
+
+
+//    unsigned int namelen = sizeof(this->socket_info);
+//    if (getsockname(this->socket_fd, (struct sockaddr *) &socket_info, &namelen) < 0) {
+//        LogError("Failed to get socket name");
+//    }
 }
 
+RawUdpSocket::RawUdpSocket(string socket_ip)
+{
+    memset(&socket_info, 0, sizeof(socket_info));
+
+    this->socket_ip = socket_ip;  // TODO , IP Address.Any
+
+    this->socket_info.sin_family = AF_INET;  /* Server is in Internet Domain */
+    this->socket_info.sin_port = 0;
+
+    if (inet_pton(AF_INET, socket_ip.c_str(), &socket_info.sin_addr.s_addr) == -1) {
+        LogError("Failed to convert IP address");
+    }
+
+    if ((this->socket_fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+        LogError("Failed to create socket");
+    }
+}
 
 void RawUdpSocket::SetReceiveTimeout(int timeout_secs, int timeout_micros)
 {
@@ -85,8 +106,8 @@ int RawUdpSocket::Receive(void *buff, int buff_length)
 
 void RawUdpSocket::LogError(const char *extra_info)
 {
-    char *error = nullptr;
-    sprintf(error, "%s:%s\n", extra_info, strerror(errno));
+    string error(extra_info);
+    error = error.append(strerror(errno));
 
     if (errno == 0)return;  // Do nothing if the operation succeeded
 
@@ -108,7 +129,7 @@ void RawUdpSocket::Send(AddressInfo &receiver_info, void *msg, int length)
 
 string RawUdpSocket::GetIpAdress()
 {
-    return inet_ntoa(socket_info.sin_addr);
+    return string(inet_ntoa(socket_info.sin_addr));
 }
 
 unsigned short RawUdpSocket::GetPortNumber()
@@ -116,11 +137,31 @@ unsigned short RawUdpSocket::GetPortNumber()
     return ntohs(socket_info.sin_port);
 }
 
+void RawUdpSocket::UpdateSocketInfo()
+{
+    // Updates the socket info in the "socket_info" object by calling getsockname,
+    // this function must be called after binding to the address, otherwise it corrupts
+    // the previously stored socket info
+    unsigned int namelen = sizeof((this->socket_info));
+    if (getsockname(this->socket_fd, (struct sockaddr *) &(this->socket_info), &namelen) < 0) {
+        LogError("Can't update info ");
+    }
+
+}
+
 void RawUdpSocket::Bind()
 {
-    if (bind(this->socket_fd, (struct sockaddr *) &this->socket_info, sockaddr_in4_size) < 0) {
-        LogError("failed to bind");
+    int yes = 1;
+
+    if (setsockopt(this->socket_fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(yes)) == -1) {
+        LogError("Failed to set reuse port option ");
     }
+
+    if (bind(this->socket_fd, (struct sockaddr *) &this->socket_info, sizeof(this->socket_info)) < 0) {
+        LogError("failed to bind ");
+    }
+
+    UpdateSocketInfo(); // After the address is bound, we can get its info
 }
 
 bool RawUdpSocket::GetDetailedSocketError(long num_bytes, string &msg)
@@ -130,7 +171,8 @@ bool RawUdpSocket::GetDetailedSocketError(long num_bytes, string &msg)
         msg = msg.append("#connection closed");
         is_err = true;
     } else if (num_bytes == -1) {
-        msg = msg.append("# receive err");
+        msg = msg.append("# receive err:");
+        msg = msg.append(strerror(errno));
         is_err = true;
     }
     return is_err;
@@ -138,15 +180,19 @@ bool RawUdpSocket::GetDetailedSocketError(long num_bytes, string &msg)
 
 string RawUdpSocket::ReceiveString()
 {
-    char buff[UDP_MTU];
-    int count = Receive(buff, UDP_MTU);
+    AddressInfo dummy;
+    return ReceiveString(dummy);
+}
+
+string RawUdpSocket::ReceiveString(AddressInfo &sender_info)
+{
+    char buff[UDP_MTU] = {0};
+    int count = Receive(sender_info, buff, UDP_MTU);
 
     string detail("Failed to receive string");
     if (GetDetailedSocketError(count, detail)) {
         throw std::runtime_error(detail);
     }
-
-    buff[count] = 0;    // Must do, otherwise the string gets corrupt at the end
 
     return string(buff);
 }
@@ -157,18 +203,21 @@ void RawUdpSocket::SendString(AddressInfo &receiver_info, string &msg)
 }
 
 
-std::unique_ptr<Packet> RawUdpSocket::ReceivePacket()
+bool RawUdpSocket::ReceivePacket(std::unique_ptr<Packet> &packet)
 {
     byte *data = (byte *) calloc(1, (size_t) UDP_MTU);
 
     int size = Receive(data, UDP_MTU);
 
     string detail("Failed to receive packet");
-    if (GetDetailedSocketError(size, detail)) {
+
+    if (size < 0 && errno == EAGAIN) {
+        return false;   // Timeout
+    } else if (GetDetailedSocketError(size, detail)) {
         throw std::runtime_error(detail);
     }
-
-    return Packet::Create(data, (unsigned short) size);
+    packet = Packet::Create(data, (unsigned short) size);
+    return true;
 }
 
 void RawUdpSocket::SendPacket(AddressInfo &receiver_info, unique_ptr<Packet> &packet)

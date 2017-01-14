@@ -20,6 +20,12 @@ public:
 
     RawUdpSocket(AddressInfo &info);
 
+    /**
+     * Use this constructor when creating a client socket, picks a random port number
+     * @param socket_ip IP of the created socket
+     */
+    RawUdpSocket(string socket_ip);
+
     void SetReceiveTimeout(int timeout_secs, int timeout_micros);
 
     void SetSendTimeout(int timeout_secs, int timeout_micros);
@@ -30,7 +36,9 @@ public:
 
     string ReceiveString();
 
-    std::unique_ptr<Packet> ReceivePacket() noexcept (false);   // TODO read more about noexcept
+    string ReceiveString(AddressInfo &sender_info);
+
+    bool ReceivePacket(std::unique_ptr<Packet> &packet);
 
     static bool GetDetailedSocketError(long num_bytes, string &msg);
 
@@ -50,6 +58,8 @@ public:
 
 private:
     void LogError(const char *extra_info);
+
+    void UpdateSocketInfo();
 
     string socket_ip;
     unsigned int sockaddr_in4_size = sizeof(sockaddr_in); // For IPv4 only

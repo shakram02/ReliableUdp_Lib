@@ -15,8 +15,6 @@ struct AddressInfo
     inline AddressInfo();
 
     inline AddressInfo(std::string ip, unsigned short port_number);
-
-
 };
 
 AddressInfo::AddressInfo(std::string ip, unsigned short port_number)
@@ -27,6 +25,5 @@ AddressInfo::AddressInfo(std::string ip, unsigned short port_number)
 
 AddressInfo::AddressInfo()
 {}
-
 
 #endif //UDPSOCKETLIB_CLIENTINFO_H
