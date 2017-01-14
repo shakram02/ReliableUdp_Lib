@@ -62,7 +62,13 @@ public:
      * @param data Data to be moved to packet, the data is then invalidated for outsiders
      * @param seq_no Sequence number of the packet
      */
-    Packet(unique_ptr<ByteVector> &data, unsigned int seq_no);
+    Packet(unique_ptr<ByteVector> &data, int seq_no);
+
+    /**
+     * Creates an ACK packet
+     * @param seq_no ACK seqno.
+     */
+    Packet(int seq_no);
 
     /**
      * Transforms the content of the packet to an array of bytes

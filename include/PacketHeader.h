@@ -21,9 +21,10 @@ public:
     unsigned short chksum;
 
     /**
-     * Sequence number of the packet
+     * Sequence number of the packet, it's made a signed int
+     * to operate with protocol messages that will have negative seqnos
      */
-    unsigned int seqno;
+    int seqno;
 
     /**
      * Length of data inside the data field
@@ -34,7 +35,7 @@ public:
 
     ~PacketHeader();
 
-    PacketHeader(unsigned int ackNum, unsigned short dataLen, unsigned short dataChecksum);
+    PacketHeader(int ackNum, unsigned short dataLen, unsigned short dataChecksum);
 
     /**
      * Deserializes the raw array of bytes to a PacketHeader

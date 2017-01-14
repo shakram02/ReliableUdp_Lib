@@ -7,6 +7,11 @@
 #include <cstring>
 #include <chrono>
 #include <thread>
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
 #include "UdpLibGlobaldefs.h"
 
 RawUdpSocket::RawUdpSocket(AddressInfo &info)
@@ -184,8 +189,51 @@ string RawUdpSocket::ReceiveString()
     return ReceiveString(dummy);
 }
 
+int RawUdpSocket::ReceiveStringPacket(string &str)
+{
+    /**
+     * TODO, later messaging will be added, a seq no of a message will be
+     * the negation of the sender's ID ( negative number ) + the ID of the message
+     * to keep it a negative number
+     *
+     * TODO Alternative,
+     * As long as messaging will have its own socket, it can have its own serial numbers
+     * for messages ( positive numbers )
+     *
+     * TODO Alternative,
+     * Use a separate function for sending string messages that are not protocol messages
+     *
+     * TODO notice,
+     * The protocol messages can't by any means use positive sequence numbers as they're used
+     * in file transfer, there is an overlap between the file transfer socket and the main
+     * socket in protocol messaging
+     */
+
+    AddressInfo dummy;
+    return ReceiveStringPacket(dummy, str); // Protocol messaging sequencing is negative
+}
+
+int RawUdpSocket::ReceiveStringPacket(AddressInfo &sender_info, string &str)
+{
+    unique_ptr<Packet> packet;
+
+    if (!ReceivePacket(sender_info, packet) || packet->header->dataLen == 0) {
+        // Invalid value for protocol message, protocol messages has negative seq numbers,
+        // hint: use with if(!ReceiveString())-> fail
+        return 0;
+    }
+
+    unique_ptr<ByteVector> buffer;
+    packet->GetData(buffer);
+
+    str = string(buffer->begin(), buffer->end());
+    return packet->header->seqno;
+}
+
 string RawUdpSocket::ReceiveString(AddressInfo &sender_info)
 {
+    // TODO deprecated, use ReceiveStringPacket instead
+
     char buff[UDP_MTU] = {0};
     int count = Receive(sender_info, buff, UDP_MTU);
 
@@ -199,13 +247,20 @@ string RawUdpSocket::ReceiveString(AddressInfo &sender_info)
 
 void RawUdpSocket::SendString(AddressInfo &receiver_info, string &msg)
 {
+    // TODO deprecated, use SendStringPacket instead
     Send(receiver_info, (void *) msg.data(), (int) msg.size());
 }
 
+void RawUdpSocket::SendStringPacket(AddressInfo &receiver_info, string &msg, int protocol_seqno)
+{
+    unique_ptr<ByteVector> data = unique_ptr<ByteVector>(new ByteVector(msg.begin(), msg.end()));
+    unique_ptr<Packet> pck = unique_ptr<Packet>(new Packet(data, protocol_seqno));
+    SendPacket(receiver_info, pck);
+}
 
 bool RawUdpSocket::ReceivePacket(std::unique_ptr<Packet> &packet)
 {
-    byte *data = (byte *) calloc(1, (size_t) UDP_MTU);
+    byte data[UDP_MTU] = {0};
 
     int size = Receive(data, UDP_MTU);
 
@@ -220,6 +275,24 @@ bool RawUdpSocket::ReceivePacket(std::unique_ptr<Packet> &packet)
     return true;
 }
 
+bool RawUdpSocket::ReceivePacket(AddressInfo &sender_info, std::unique_ptr<Packet> &packet)
+{
+    byte data[UDP_MTU] = {0};
+
+    int size = Receive(sender_info, data, UDP_MTU);
+
+    string detail("Failed to receive packet");
+
+    if (size < 0 && errno == EAGAIN) {
+        return false;   // Timeout
+    } else if (GetDetailedSocketError(size, detail)) {
+        throw std::runtime_error(detail);
+    }
+    packet = Packet::Create(data, (unsigned short) size);
+    return true;
+}
+
+
 void RawUdpSocket::SendPacket(AddressInfo &receiver_info, unique_ptr<Packet> &packet)
 {
     unique_ptr<ByteVector> bytes = packet->Serialize();
@@ -230,3 +303,4 @@ RawUdpSocket::~RawUdpSocket()
 {
     close(this->socket_fd);
 }
+

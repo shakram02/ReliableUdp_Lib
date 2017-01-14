@@ -231,33 +231,6 @@ src/RawUdpSocket.cpp.s:
 	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/RawUdpSocket.cpp.s
 .PHONY : src/RawUdpSocket.cpp.s
 
-src/netutils.o: src/netutils.c.o
-
-.PHONY : src/netutils.o
-
-# target to build an object file
-src/netutils.c.o:
-	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/netutils.c.o
-.PHONY : src/netutils.c.o
-
-src/netutils.i: src/netutils.c.i
-
-.PHONY : src/netutils.i
-
-# target to preprocess a source file
-src/netutils.c.i:
-	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/netutils.c.i
-.PHONY : src/netutils.c.i
-
-src/netutils.s: src/netutils.c.s
-
-.PHONY : src/netutils.s
-
-# target to generate assembly for a file
-src/netutils.c.s:
-	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/netutils.c.s
-.PHONY : src/netutils.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -279,9 +252,6 @@ help:
 	@echo "... src/RawUdpSocket.o"
 	@echo "... src/RawUdpSocket.i"
 	@echo "... src/RawUdpSocket.s"
-	@echo "... src/netutils.o"
-	@echo "... src/netutils.i"
-	@echo "... src/netutils.s"
 .PHONY : help
 
 

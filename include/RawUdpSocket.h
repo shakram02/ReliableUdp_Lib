@@ -32,19 +32,26 @@ public:
 
     int Receive(AddressInfo &sender_info, void *buff, int buff_length);
 
-    int Receive(void *buff, int buff_length);
 
     string ReceiveString();
 
     string ReceiveString(AddressInfo &sender_info);
 
+    int ReceiveStringPacket(string &str);
+
+    int ReceiveStringPacket(AddressInfo &sender_info, string &str);
+
     bool ReceivePacket(std::unique_ptr<Packet> &packet);
+
+    bool ReceivePacket(AddressInfo &sender_info, std::unique_ptr<Packet> &packet);
 
     static bool GetDetailedSocketError(long num_bytes, string &msg);
 
     void Send(AddressInfo &receiver_info, void *msg, int length);
 
     void SendString(AddressInfo &receiver_info, string &msg);
+
+    void SendStringPacket(AddressInfo &receiver_info, string &msg, int protocol_seqno);
 
     void SendPacket(AddressInfo &receiver_info, std::unique_ptr<Packet> &packet);
 
@@ -58,6 +65,8 @@ public:
 
 private:
     void LogError(const char *extra_info);
+
+    int Receive(void *buff, int buff_length);
 
     void UpdateSocketInfo();
 

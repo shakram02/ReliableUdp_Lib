@@ -17,7 +17,7 @@ Packet::Packet()
 Packet::~Packet()
 {}
 
-Packet::Packet(unique_ptr<ByteVector> &data, unsigned int seq_no)
+Packet::Packet(unique_ptr<ByteVector> &data, int seq_no)
 {
     // A reference to a unique_ptr is needed so the pointer can be invalidated
 
@@ -40,6 +40,16 @@ Packet::Packet(unique_ptr<ByteVector> &data, unsigned int seq_no)
     }
 
     data.reset(nullptr);
+}
+
+Packet::Packet(int seq_no)
+{
+    // ACK packet
+
+    unsigned short checksum = 24930;   // Special value
+
+    this->data = nullptr;
+    this->header = unique_ptr<PacketHeader>(new PacketHeader(seq_no, 0, checksum));
 }
 
 unique_ptr<ByteVector> Packet::Serialize()

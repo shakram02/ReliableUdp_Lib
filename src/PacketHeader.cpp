@@ -12,7 +12,7 @@ PacketHeader::PacketHeader()
 
 }
 
-PacketHeader::PacketHeader(unsigned int ackNum, unsigned short dataLen, unsigned short dataChecksum)
+PacketHeader::PacketHeader(int ackNum, unsigned short dataLen, unsigned short dataChecksum)
 {
     this->seqno = ackNum;
     this->chksum = (unsigned short) (dataChecksum + 0);   // TODO do the checksum
@@ -24,7 +24,7 @@ unique_ptr<PacketHeader> PacketHeader::Deserialize(byte serializedPacket[])
     PacketHeader *p = new PacketHeader();
 
     // The code is detailed for readability
-    p->seqno = DeSerializeValue<unsigned int>(serializedPacket, 0);
+    p->seqno = DeSerializeValue<int>(serializedPacket, 0);
     p->chksum = DeSerializeValue<unsigned short>(serializedPacket, sizeof(seqno));
     p->dataLen = DeSerializeValue<unsigned short>(serializedPacket, sizeof(seqno) + sizeof(chksum));
 
@@ -43,7 +43,7 @@ unique_ptr<ByteVector> PacketHeader::Serialize()
     // Preallocate all the memory you need
     raw->reserve((unsigned long) this->Size());
 
-    SerializeValue<unsigned int>(&(this->seqno), *raw);
+    SerializeValue<int>(&(this->seqno), *raw);
     SerializeValue<unsigned short>((&this->chksum), *raw);
     SerializeValue<unsigned short>(&(this->dataLen), *raw);
 
