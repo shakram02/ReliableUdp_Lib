@@ -21,6 +21,7 @@ PacketHeader::PacketHeader(int ackNum, unsigned short dataLen, unsigned short da
 
 unique_ptr<PacketHeader> PacketHeader::Deserialize(byte serializedPacket[])
 {
+    // TODO load in host order (ntohs), to avoid issues with different processor architectures
     PacketHeader *p = new PacketHeader();
 
     // The code is detailed for readability
@@ -38,6 +39,7 @@ PacketHeader::~PacketHeader()
 
 unique_ptr<ByteVector> PacketHeader::Serialize()
 {
+    // TODO save in network order (htons), to avoid issues with different processor architectures
     ByteVector *raw = new ByteVector();
 
     // Preallocate all the memory you need

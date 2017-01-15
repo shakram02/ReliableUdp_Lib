@@ -33,9 +33,10 @@ public:
     int Receive(AddressInfo &sender_info, void *buff, int buff_length);
 
 
-    string ReceiveString();
+    //string ReceiveString();
 
-    string ReceiveString(AddressInfo &sender_info);
+    //string ReceiveString(AddressInfo &sender_info);
+//    void SendString(AddressInfo &receiver_info, string &msg);
 
     int ReceiveStringPacket(string &str);
 
@@ -48,8 +49,6 @@ public:
     static bool GetDetailedSocketError(long num_bytes, string &msg);
 
     void Send(AddressInfo &receiver_info, void *msg, int length);
-
-    void SendString(AddressInfo &receiver_info, string &msg);
 
     void SendStringPacket(AddressInfo &receiver_info, string &msg, int protocol_seqno);
 

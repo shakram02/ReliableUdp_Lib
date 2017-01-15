@@ -183,11 +183,11 @@ bool RawUdpSocket::GetDetailedSocketError(long num_bytes, string &msg)
     return is_err;
 }
 
-string RawUdpSocket::ReceiveString()
-{
-    AddressInfo dummy;
-    return ReceiveString(dummy);
-}
+//string RawUdpSocket::ReceiveString()
+//{
+//    AddressInfo dummy;
+//    return ReceiveString(dummy);
+//}
 
 int RawUdpSocket::ReceiveStringPacket(string &str)
 {
@@ -230,26 +230,26 @@ int RawUdpSocket::ReceiveStringPacket(AddressInfo &sender_info, string &str)
     return packet->header->seqno;
 }
 
-string RawUdpSocket::ReceiveString(AddressInfo &sender_info)
-{
-    // TODO deprecated, use ReceiveStringPacket instead
+//string RawUdpSocket::ReceiveString(AddressInfo &sender_info)
+//{
+//    // TODO deprecated, use ReceiveStringPacket instead
+//
+//    char buff[UDP_MTU] = {0};
+//    int count = Receive(sender_info, buff, UDP_MTU);
+//
+//    string detail("Failed to receive string");
+//    if (GetDetailedSocketError(count, detail)) {
+//        throw std::runtime_error(detail);
+//    }
+//
+//    return string(buff);
+//}
 
-    char buff[UDP_MTU] = {0};
-    int count = Receive(sender_info, buff, UDP_MTU);
-
-    string detail("Failed to receive string");
-    if (GetDetailedSocketError(count, detail)) {
-        throw std::runtime_error(detail);
-    }
-
-    return string(buff);
-}
-
-void RawUdpSocket::SendString(AddressInfo &receiver_info, string &msg)
-{
-    // TODO deprecated, use SendStringPacket instead
-    Send(receiver_info, (void *) msg.data(), (int) msg.size());
-}
+//void RawUdpSocket::SendString(AddressInfo &receiver_info, string &msg)
+//{
+//    // TODO deprecated, use SendStringPacket instead
+//    Send(receiver_info, (void *) msg.data(), (int) msg.size());
+//}
 
 void RawUdpSocket::SendStringPacket(AddressInfo &receiver_info, string &msg, int protocol_seqno)
 {

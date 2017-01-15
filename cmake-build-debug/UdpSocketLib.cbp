@@ -89,7 +89,7 @@
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/AddressInfo.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
-		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/ProtocolMsgId.h">
+		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/ProtocolDef.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/RawUdpSocket.h">

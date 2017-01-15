@@ -54,6 +54,8 @@ Packet::Packet(int seq_no)
 
 unique_ptr<ByteVector> Packet::Serialize()
 {
+    // TODO save in network order (htons), to avoid issues with different processor architectures
+
     // Reserve the size of the whole packet
     ByteVector *buffer = new ByteVector();
     buffer->reserve((unsigned long) (this->header->dataLen + header->Size()));
@@ -71,6 +73,7 @@ unique_ptr<ByteVector> Packet::Serialize()
 // TODO Add template specialization for data ( data bytes in packet )
 unique_ptr<Packet> Packet::Create(byte serializedPacket[], unsigned short arrayLength)
 {
+    // TODO load in host order (ntohs), to avoid issues with different processor architectures
     if (arrayLength < PacketHeader::Size()) {
         throw std::invalid_argument("Length of raw packet is less than the minimal size");
     }

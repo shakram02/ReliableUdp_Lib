@@ -11,7 +11,7 @@
 #define DATA_FRAGMENT_SIZE 128
 #define UDP_MTU 256
 
-#define HANDSHAKE "hndshk"
+
 #define PCKT_SLEEP 500
 
 #include <vector>
