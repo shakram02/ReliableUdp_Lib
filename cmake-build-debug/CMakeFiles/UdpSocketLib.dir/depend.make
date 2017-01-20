@@ -7,6 +7,10 @@ CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o: ../include/PacketHeader.h
 CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o: ../include/UdpLibGlobaldefs.h
 CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.o: ../src/Checksum.cpp
 
+CMakeFiles/UdpSocketLib.dir/src/GbnWindow.cpp.o: ../include/GbnWindow.h
+CMakeFiles/UdpSocketLib.dir/src/GbnWindow.cpp.o: ../include/SendWindow.h
+CMakeFiles/UdpSocketLib.dir/src/GbnWindow.cpp.o: ../src/GbnWindow.cpp
+
 CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o: ../include/Packet.h
 CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o: ../include/PacketHeader.h
 CMakeFiles/UdpSocketLib.dir/src/Packet.cpp.o: ../include/UdpLibGlobaldefs.h

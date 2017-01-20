@@ -14,6 +14,9 @@
 
 #define PCKT_SLEEP 500
 
+#define WND_SIZE 8
+#define MAX_FAIL_COUNT 8
+
 #include <vector>
 #include <memory>
 typedef unsigned char byte;

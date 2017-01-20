@@ -150,6 +150,33 @@ src/Checksum.cpp.s:
 	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/Checksum.cpp.s
 .PHONY : src/Checksum.cpp.s
 
+src/GbnWindow.o: src/GbnWindow.cpp.o
+
+.PHONY : src/GbnWindow.o
+
+# target to build an object file
+src/GbnWindow.cpp.o:
+	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/GbnWindow.cpp.o
+.PHONY : src/GbnWindow.cpp.o
+
+src/GbnWindow.i: src/GbnWindow.cpp.i
+
+.PHONY : src/GbnWindow.i
+
+# target to preprocess a source file
+src/GbnWindow.cpp.i:
+	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/GbnWindow.cpp.i
+.PHONY : src/GbnWindow.cpp.i
+
+src/GbnWindow.s: src/GbnWindow.cpp.s
+
+.PHONY : src/GbnWindow.s
+
+# target to generate assembly for a file
+src/GbnWindow.cpp.s:
+	$(MAKE) -f CMakeFiles/UdpSocketLib.dir/build.make CMakeFiles/UdpSocketLib.dir/src/GbnWindow.cpp.s
+.PHONY : src/GbnWindow.cpp.s
+
 src/Packet.o: src/Packet.cpp.o
 
 .PHONY : src/Packet.o
@@ -243,6 +270,9 @@ help:
 	@echo "... src/Checksum.o"
 	@echo "... src/Checksum.i"
 	@echo "... src/Checksum.s"
+	@echo "... src/GbnWindow.o"
+	@echo "... src/GbnWindow.i"
+	@echo "... src/GbnWindow.s"
 	@echo "... src/Packet.o"
 	@echo "... src/Packet.i"
 	@echo "... src/Packet.s"

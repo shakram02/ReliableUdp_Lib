@@ -16,6 +16,12 @@ Packet.h
 cstdint
 -
 
+../include/GbnWindow.h
+SendWindow.h
+../include/SendWindow.h
+stdexcept
+-
+
 ../include/Packet.h
 UdpLibGlobaldefs.h
 ../include/UdpLibGlobaldefs.h
@@ -48,6 +54,10 @@ AddressInfo.h
 Packet.h
 ../include/Packet.h
 
+../include/SendWindow.h
+queue
+-
+
 ../include/UdpLibGlobaldefs.h
 vector
 -
@@ -57,6 +67,10 @@ memory
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.cpp
 Checksum.h
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.h
+
+/home/ahmed/code/c/clg_ReliableUdp_Lib/src/GbnWindow.cpp
+GbnWindow.h
+/home/ahmed/code/c/clg_ReliableUdp_Lib/src/GbnWindow.h
 
 /home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.cpp
 Packet.h

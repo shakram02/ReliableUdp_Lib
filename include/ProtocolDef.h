@@ -12,7 +12,7 @@
 
 /* Client configuration */
 
-
+ 
 /* Protocol messages format: msg_SENDER */
 
 #define HNDSHK_CLNT "hndshk"
@@ -33,5 +33,7 @@
 #define FILE_SZ_SRV "FILESIZE-"
 #define ID_FILE_SZ_SRV -6    /* FILESIZE-(count) */
 
+#define FILE_END_CONF_CLNT "BYE"
+#define ID_FILE_END_CONF_CLNT -7
 
 #endif //UDPSOCKETLIB_PROTOCOLMSGID_H

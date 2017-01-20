@@ -89,16 +89,28 @@
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/AddressInfo.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
+		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/FileTransferState.h">
+			<Option target="UdpSocketLib"/>
+		</Unit>
+		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/GbnWindow.h">
+			<Option target="UdpSocketLib"/>
+		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/ProtocolDef.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/RawUdpSocket.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
+		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/SendWindow.h">
+			<Option target="UdpSocketLib"/>
+		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/include/UdpLibGlobaldefs.h">
 			<Option target="UdpSocketLib"/>
 		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/Checksum.cpp">
+			<Option target="UdpSocketLib"/>
+		</Unit>
+		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/GbnWindow.cpp">
 			<Option target="UdpSocketLib"/>
 		</Unit>
 		<Unit filename="/home/ahmed/code/c/clg_ReliableUdp_Lib/src/Packet.cpp">

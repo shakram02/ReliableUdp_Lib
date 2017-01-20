@@ -12,7 +12,7 @@ file(GLOB SOURCES "src/*.cpp" "src/*.c")
 #file(GLOB SOURCES "src/*.cChecksum.cpp")
 
 #Generate the shared library from the sources
-add_library(UdpSocketLib SHARED ${SOURCES} include/UdpLibGlobaldefs.h src/RawUdpSocket.cpp include/RawUdpSocket.h include/AddressInfo.h include/ProtocolDef.h)
+add_library(UdpSocketLib SHARED ${SOURCES} include/UdpLibGlobaldefs.h src/RawUdpSocket.cpp include/RawUdpSocket.h include/AddressInfo.h include/ProtocolDef.h src/GbnWindow.cpp include/GbnWindow.h include/Window.h include/FileTransferState.h)
 
 #set(SOURCE_FILES main.cpp)
 #add_executable(UdpSocketLib ${SOURCE_FILES})
